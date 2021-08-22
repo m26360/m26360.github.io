@@ -39,6 +39,43 @@
 ]]></content>
   </entry>
   <entry>
+    <title>使用ubuntu，目录为中文的解决办法</title>
+    <url>/2021/07/29/%E4%BD%BF%E7%94%A8ubuntu%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%BA%E4%B8%AD%E6%96%87%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=en_US</span><br></pre></td></tr></table></figure>
+<p>并执行</p>
+<p>终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xdg-user-dirs-gtk-update</span><br></pre></td></tr></table></figure>
+<p>并执行，</p>
+<p>弹出窗口，选择不再提示，并确认</p>
+<p>终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=zh_CN</span><br></pre></td></tr></table></figure>
+<p>并执行</p>
+<p>关闭终端并重启ubuntu</p>
+]]></content>
+      <categories>
+        <category>杂项汇总</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>学习进度</title>
+    <url>/2021/08/22/%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/</url>
+    <content><![CDATA[<h3 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h3><h4 id="8月"><a href="#8月" class="headerlink" title="8月"></a>8月</h4><p>1.将hexo博客进行了双线部署。</p>
+]]></content>
+      <categories>
+        <category>学习进度</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>关于昨天尝试双线部署hexo</title>
+    <url>/2021/08/17/%E5%85%B3%E4%BA%8E%E6%98%A8%E5%A4%A9%E5%B0%9D%E8%AF%95%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2hexo/</url>
+    <content><![CDATA[<p>因为此博客是部署在Github上的，所以国内访问会比较慢，甚至无法访问，正好看到了将hexo双线部署在Github和Coding上，顺便也能让百度收录此博客，于是就尝试了一下，coding账号注册，新建项目，新建仓库，修改博客config文件，修改DNS解析，配置密匙，将Github解析改为境外访问等等…一气呵成，最后发现博客无法打开，因为网上的教程都是腾讯云开发平台的教程，好像是coding被腾讯收购了，而我用的又是coding，难免会有些设置不存在或者找不到，导致最终失败了，昨天也是弄了几个小时，头晕眼花，等过一段时间我再重新试一下。</p>
+]]></content>
+      <categories>
+        <category>记录心情</category>
+      </categories>
+  </entry>
+  <entry>
     <title>hexo如何新建文章</title>
     <url>/2021/08/15/hexo%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<h3 id="1-新建文章"><a href="#1-新建文章" class="headerlink" title="1.新建文章"></a>1.新建文章</h3><h4 id="（1）输入命令"><a href="#（1）输入命令" class="headerlink" title="（1）输入命令"></a>（1）输入命令</h4><p>在hexo博客目录下，右键选择Git Bash Here,输入以下代码并回车：</p>
@@ -56,43 +93,6 @@
 ]]></content>
       <categories>
         <category>hexo博客操作相关</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>关于昨天尝试双线部署hexo</title>
-    <url>/2021/08/17/%E5%85%B3%E4%BA%8E%E6%98%A8%E5%A4%A9%E5%B0%9D%E8%AF%95%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2hexo/</url>
-    <content><![CDATA[<p>因为此博客是部署在Github上的，所以国内访问会比较慢，甚至无法访问，正好看到了将hexo双线部署在Github和Coding上，顺便也能让百度收录此博客，于是就尝试了一下，coding账号注册，新建项目，新建仓库，修改博客config文件，修改DNS解析，配置密匙，将Github解析改为境外访问等等…一气呵成，最后发现博客无法打开，因为网上的教程都是腾讯云开发平台的教程，好像是coding被腾讯收购了，而我用的又是coding，难免会有些设置不存在或者找不到，导致最终失败了，昨天也是弄了几个小时，头晕眼花，等过一段时间我再重新试一下。</p>
-]]></content>
-      <categories>
-        <category>记录心情</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>学习进度</title>
-    <url>/2021/08/22/%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/</url>
-    <content><![CDATA[<h3 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h3><h4 id="8月"><a href="#8月" class="headerlink" title="8月"></a>8月</h4><p>1.将hexo博客进行了双线部署</p>
-]]></content>
-      <categories>
-        <category>学习进度</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>使用ubuntu，目录为中文的解决办法</title>
-    <url>/2021/07/29/%E4%BD%BF%E7%94%A8ubuntu%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%BA%E4%B8%AD%E6%96%87%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=en_US</span><br></pre></td></tr></table></figure>
-<p>并执行</p>
-<p>终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xdg-user-dirs-gtk-update</span><br></pre></td></tr></table></figure>
-<p>并执行，</p>
-<p>弹出窗口，选择不再提示，并确认</p>
-<p>终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=zh_CN</span><br></pre></td></tr></table></figure>
-<p>并执行</p>
-<p>关闭终端并重启ubuntu</p>
-]]></content>
-      <categories>
-        <category>杂项汇总</category>
       </categories>
   </entry>
   <entry>
