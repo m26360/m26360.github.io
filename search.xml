@@ -1,51 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo 双线部署到Coding和GitHub</title>
-    <url>/2021/08/16/hexo-%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%88%B0Coding%E5%92%8CGitHub/</url>
-    <content><![CDATA[<p>因为教程步骤繁琐，具体请参考:<a href="https://cloud.tencent.com/developer/article/1834005">https://cloud.tencent.com/developer/article/1834005</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hexo如何新建文章</title>
-    <url>/2021/08/15/hexo%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h3 id="1-新建文章"><a href="#1-新建文章" class="headerlink" title="1.新建文章"></a>1.新建文章</h3><h4 id="（1）输入命令"><a href="#（1）输入命令" class="headerlink" title="（1）输入命令"></a>（1）输入命令</h4><p>在hexo博客目录下，右键选择Git Bash Here,输入以下代码并回车：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章名字&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="（2）文章所在位置"><a href="#（2）文章所在位置" class="headerlink" title="（2）文章所在位置"></a>（2）文章所在位置</h4><p>在hexo博客目录下的/source/_posts/文件夹里，可以找到你新建的博客文件.md，直接打开编辑文章即可（使用Markdown语法）。传送门：<a href="https://www.appinn.com/markdown/">Markdown语法教程</a></p>
-<h3 id="2-编辑文章"><a href="#2-编辑文章" class="headerlink" title="2.编辑文章"></a>2.编辑文章</h3><h4 id="（1）设置文章所属tags（标签）和categories（分类）"><a href="#（1）设置文章所属tags（标签）和categories（分类）" class="headerlink" title="（1）设置文章所属tags（标签）和categories（分类）"></a>（1）设置文章所属tags（标签）和categories（分类）</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo如何新建文章</span><br><span class="line">date: 2021-08-15 11:55:43</span><br><span class="line">tags: （设置标签的地方）</span><br><span class="line">categories: （设置分类的地方）</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p><font color="#dd0000">（注：设置属性的冒号后面要有一个空格，一定要注意！）</font><br /></p>
-<h4 id="（2）设置阅读全文按钮"><a href="#（2）设置阅读全文按钮" class="headerlink" title="（2）设置阅读全文按钮"></a>（2）设置阅读全文按钮</h4><p>在文章中使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-<p>之后的代码将不会被显示。</p>
-<h3 id="3-将文章部署到Github"><a href="#3-将文章部署到Github" class="headerlink" title="3.将文章部署到Github"></a>3.将文章部署到Github</h3><p>（1）在Git中依次执行以下3行代码（3部曲）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo c</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>（每次执行3部曲的时候，都要进入Github仓库重新设置一下Page为你的域名，至于问什么会出现这种问题，我也不知道）</p>
-<p>接下来访问自己的博客域名，就能看到新的文章了！</p>
-]]></content>
-      <categories>
-        <category>hexo博客操作相关</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>使用ubuntu，目录为中文的解决办法</title>
-    <url>/2021/07/29/%E4%BD%BF%E7%94%A8ubuntu%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%BA%E4%B8%AD%E6%96%87%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=en_US</span><br></pre></td></tr></table></figure>
-<p>并执行</p>
-<p>终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xdg-user-dirs-gtk-update</span><br></pre></td></tr></table></figure>
-<p>并执行，</p>
-<p>弹出窗口，选择不再提示，并确认</p>
-<p>终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=zh_CN</span><br></pre></td></tr></table></figure>
-<p>并执行</p>
-<p>关闭终端并重启ubuntu</p>
-]]></content>
-      <categories>
-        <category>杂项汇总</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Git Bash的基本命令</title>
     <url>/2021/07/31/Git%20Bash%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h3 id="第-1-个命令："><a href="#第-1-个命令：" class="headerlink" title="第 1 个命令："></a>第 1 个命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
@@ -78,12 +33,29 @@
       </categories>
   </entry>
   <entry>
-    <title>学习进度</title>
-    <url>/2021/08/22/%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/</url>
-    <content><![CDATA[<h3 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h3><h4 id="8月"><a href="#8月" class="headerlink" title="8月"></a>8月</h4><p>1.将hexo博客进行了双线部署</p>
+    <title>hexo 双线部署到Coding和GitHub</title>
+    <url>/2021/08/16/hexo-%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%88%B0Coding%E5%92%8CGitHub/</url>
+    <content><![CDATA[<p>因为教程步骤繁琐，具体请参考:<a href="https://cloud.tencent.com/developer/article/1834005">https://cloud.tencent.com/developer/article/1834005</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo如何新建文章</title>
+    <url>/2021/08/15/hexo%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h3 id="1-新建文章"><a href="#1-新建文章" class="headerlink" title="1.新建文章"></a>1.新建文章</h3><h4 id="（1）输入命令"><a href="#（1）输入命令" class="headerlink" title="（1）输入命令"></a>（1）输入命令</h4><p>在hexo博客目录下，右键选择Git Bash Here,输入以下代码并回车：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章名字&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="（2）文章所在位置"><a href="#（2）文章所在位置" class="headerlink" title="（2）文章所在位置"></a>（2）文章所在位置</h4><p>在hexo博客目录下的/source/_posts/文件夹里，可以找到你新建的博客文件.md，直接打开编辑文章即可（使用Markdown语法）。传送门：<a href="https://www.appinn.com/markdown/">Markdown语法教程</a></p>
+<h3 id="2-编辑文章"><a href="#2-编辑文章" class="headerlink" title="2.编辑文章"></a>2.编辑文章</h3><h4 id="（1）设置文章所属tags（标签）和categories（分类）"><a href="#（1）设置文章所属tags（标签）和categories（分类）" class="headerlink" title="（1）设置文章所属tags（标签）和categories（分类）"></a>（1）设置文章所属tags（标签）和categories（分类）</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo如何新建文章</span><br><span class="line">date: 2021-08-15 11:55:43</span><br><span class="line">tags: （设置标签的地方）</span><br><span class="line">categories: （设置分类的地方）</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">（注：设置属性的冒号后面要有一个空格，一定要注意！）</font><br /></p>
+<h4 id="（2）设置阅读全文按钮"><a href="#（2）设置阅读全文按钮" class="headerlink" title="（2）设置阅读全文按钮"></a>（2）设置阅读全文按钮</h4><p>在文章中使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<p>之后的代码将不会被显示。</p>
+<h3 id="3-将文章部署到Github"><a href="#3-将文章部署到Github" class="headerlink" title="3.将文章部署到Github"></a>3.将文章部署到Github</h3><p>（1）在Git中依次执行以下3行代码（3部曲）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo c</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>（每次执行3部曲的时候，都要进入Github仓库重新设置一下Page为你的域名，至于问什么会出现这种问题，我也不知道）</p>
+<p>接下来访问自己的博客域名，就能看到新的文章了！</p>
 ]]></content>
       <categories>
-        <category>学习进度</category>
+        <category>hexo博客操作相关</category>
       </categories>
   </entry>
   <entry>
@@ -96,13 +68,31 @@
       </categories>
   </entry>
   <entry>
-    <title>第一次拥有了属于自己的博客</title>
-    <url>/2021/07/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8B%A5%E6%9C%89%E4%BA%86%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>欢迎来到mana的小窝，这是我的第一个博客！很久以前就想建立一个自己的博客，当时因为各种原因未能实现（主要还是技术菜），昨天突然心血来潮，再次想要创建博客，于是在网络上看到一篇文章：用<a href="https://zhuanlan.zhihu.com/p/102592286">Github+hexo</a>创建博客，说到Github，很久以前注册过账号，但也仅仅是停留在注册这里,并没有真正用过，我想，以后应该会经常使用的。所以就照着答主的教程开始搭建，期间因为种种原因，遇到很多问题，各种百度查资料，最终还是完成了。过后我会在他的基础上完善修正一下搭建博客的教程。</p>
-<h2 id="创建此博客的想法"><a href="#创建此博客的想法" class="headerlink" title="创建此博客的想法"></a>创建此博客的想法</h2><p>因为本人是软件工程专业的，写下此篇博客的时间为大一下的暑假。因为在此之前自学完了javase，html、css、javascript的基础语法，当时也没有将遇到的问题记录下来，也是有点小遗憾。所以博客仅用来分享记录我学习路上遇到的问题和心情等等。</p>
+    <title>学习进度</title>
+    <url>/2021/08/22/%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/</url>
+    <content><![CDATA[<h3 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h3><h4 id="8月"><a href="#8月" class="headerlink" title="8月"></a>8月</h4><p>1.将hexo博客进行了双线部署</p>
 ]]></content>
       <categories>
-        <category>记录心情</category>
+        <category>学习进度</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用ubuntu，目录为中文的解决办法</title>
+    <url>/2021/07/29/%E4%BD%BF%E7%94%A8ubuntu%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%BA%E4%B8%AD%E6%96%87%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=en_US</span><br></pre></td></tr></table></figure>
+<p>并执行</p>
+<p>终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xdg-user-dirs-gtk-update</span><br></pre></td></tr></table></figure>
+<p>并执行，</p>
+<p>弹出窗口，选择不再提示，并确认</p>
+<p>终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=zh_CN</span><br></pre></td></tr></table></figure>
+<p>并执行</p>
+<p>关闭终端并重启ubuntu</p>
+]]></content>
+      <categories>
+        <category>杂项汇总</category>
       </categories>
   </entry>
   <entry>
@@ -133,6 +123,16 @@
       <tags>
         <tag>数据结构</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>第一次拥有了属于自己的博客</title>
+    <url>/2021/07/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8B%A5%E6%9C%89%E4%BA%86%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>欢迎来到mana的小窝，这是我的第一个博客！很久以前就想建立一个自己的博客，当时因为各种原因未能实现（主要还是技术菜），昨天突然心血来潮，再次想要创建博客，于是在网络上看到一篇文章：用<a href="https://zhuanlan.zhihu.com/p/102592286">Github+hexo</a>创建博客，说到Github，很久以前注册过账号，但也仅仅是停留在注册这里,并没有真正用过，我想，以后应该会经常使用的。所以就照着答主的教程开始搭建，期间因为种种原因，遇到很多问题，各种百度查资料，最终还是完成了。过后我会在他的基础上完善修正一下搭建博客的教程。</p>
+<h2 id="创建此博客的想法"><a href="#创建此博客的想法" class="headerlink" title="创建此博客的想法"></a>创建此博客的想法</h2><p>因为本人是软件工程专业的，写下此篇博客的时间为大一下的暑假。因为在此之前自学完了javase，html、css、javascript的基础语法，当时也没有将遇到的问题记录下来，也是有点小遗憾。所以博客仅用来分享记录我学习路上遇到的问题和心情等等。</p>
+]]></content>
+      <categories>
+        <category>记录心情</category>
+      </categories>
   </entry>
   <entry>
     <title>解决hexo部署之后需要重新修改域名的问题</title>
