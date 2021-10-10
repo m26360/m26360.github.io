@@ -85,7 +85,7 @@
 <span id="more"></span>
 
 <h4 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h4><p>原始二维数组</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">0  0  0  1  0              </span><br><span class="line">0  1  0  0  2</span><br><span class="line">0  0  3  0  0         </span><br><span class="line">0  0  3  0  0</span><br><span class="line">2  0  5  0  0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">0  0  0  1  0              </span><br><span class="line">0  1  0  0  2</span><br><span class="line">0  0  3  0  0         </span><br><span class="line">2  0  5  0  0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>转换为：<br>        稀疏数组</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">     行  列   值</span><br><span class="line">    row  col  val</span><br><span class="line">[0]  4    5    6 总（原始二维数组有几行几列，几个不同值） </span><br><span class="line">[1]  0    3    1</span><br><span class="line">[2]  1    1    1</span><br><span class="line">[3]  1    4    2</span><br><span class="line">[4]  2    2    3</span><br><span class="line">[5]  3    0    2</span><br><span class="line">[6]  3    2    5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
