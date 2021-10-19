@@ -1,0 +1,4 @@
+# Allow: /source/_posts/
+# robots.txt generated at http://t.mb5u.com/robots/ 
+User-agent: *
+Sitemap: https://m26360.com/sitemap.xml
