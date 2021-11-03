@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"www.m26360.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="单向链表（面试题）配合之前文章阅读 基本介绍1.求链表有几个有效结点2.求倒数第k个结点3.反转链表">
+  <meta name="description" content="中缀表达式转后缀表达式处理方法1.初始化两个栈：运算符栈s1和储存中间结果的栈s22.从左至右扫描中缀表达式3.遇到数字时，将其压入s24.遇到运算符时，比较其与s1栈顶运算符的优先级(1)如果s1为空，或栈顶元素为左括号“)”，则直接将此运算符入s1栈(2)否则，若运算符优先级比栈顶运算符优先级高，也将运算符压入s1栈(3)若运算符优先级比栈顶运算符优先级低，将s1栈顶的运算符弹出，并压入到s2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构之单向链表-面试题">
-<meta property="og:url" content="https://www.m26360.com/2021/10/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8-%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:title" content="中缀表达式转后缀表达式">
+<meta property="og:url" content="https://www.m26360.com/2021/11/03/%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Mana的博客">
-<meta property="og:description" content="单向链表（面试题）配合之前文章阅读 基本介绍1.求链表有几个有效结点2.求倒数第k个结点3.反转链表">
+<meta property="og:description" content="中缀表达式转后缀表达式处理方法1.初始化两个栈：运算符栈s1和储存中间结果的栈s22.从左至右扫描中缀表达式3.遇到数字时，将其压入s24.遇到运算符时，比较其与s1栈顶运算符的优先级(1)如果s1为空，或栈顶元素为左括号“)”，则直接将此运算符入s1栈(2)否则，若运算符优先级比栈顶运算符优先级高，也将运算符压入s1栈(3)若运算符优先级比栈顶运算符优先级低，将s1栈顶的运算符弹出，并压入到s2">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/10/10/mh3Kd5zBMRHUrc6.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/10/qvrQCc7AmReVWTZ.png">
-<meta property="article:published_time" content="2021-10-06T02:39:59.000Z">
-<meta property="article:modified_time" content="2021-10-14T09:46:14.676Z">
+<meta property="og:image" content="https://i.loli.net/2021/11/03/VthvO5jc3oexJdH.png">
+<meta property="article:published_time" content="2021-11-03T11:02:36.000Z">
+<meta property="article:modified_time" content="2021-11-03T11:18:21.513Z">
 <meta property="article:author" content="mana">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/10/10/mh3Kd5zBMRHUrc6.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/11/03/VthvO5jc3oexJdH.png">
 
-<link rel="canonical" href="https://www.m26360.com/2021/10/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8-%E9%9D%A2%E8%AF%95%E9%A2%98/">
+<link rel="canonical" href="https://www.m26360.com/2021/11/03/%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>数据结构之单向链表-面试题 | Mana的博客</title>
+  <title>中缀表达式转后缀表达式 | Mana的博客</title>
   
 
 
@@ -198,7 +197,7 @@
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
 
-    <link itemprop="mainEntityOfPage" href="https://www.m26360.com/2021/10/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8-%E9%9D%A2%E8%AF%95%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://www.m26360.com/2021/11/03/%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/09/19/DqMFBrd67ngeT3l.jpg">
@@ -211,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据结构之单向链表-面试题
+          中缀表达式转后缀表达式
         </h1>
 
         <div class="post-meta">
@@ -220,16 +219,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-10-06 10:39:59" itemprop="dateCreated datePublished" datetime="2021-10-06T10:39:59+08:00">2021-10-06</time>
+              <time title="创建时间：2021-11-03 19:02:36 / 修改时间：19:18:21" itemprop="dateCreated datePublished" datetime="2021-11-03T19:02:36+08:00">2021-11-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-14 17:46:14" itemprop="dateModified" datetime="2021-10-14T17:46:14+08:00">2021-10-14</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -241,7 +234,7 @@
             </span>
 
           
-            <span id="/2021/10/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8-%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="数据结构之单向链表-面试题" title="阅读次数">
+            <span id="/2021/11/03/%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-meta-item leancloud_visitors" data-flag-title="中缀表达式转后缀表达式" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -265,22 +258,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="单向链表（面试题）"><a href="#单向链表（面试题）" class="headerlink" title="单向链表（面试题）"></a>单向链表（面试题）</h3><p><font color="#dd0000">配合之前文章阅读</font><br /></p>
-<h4 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h4><p>1.求链表有几个有效结点<br>2.求倒数第k个结点<br>3.反转链表</p>
-<span id="more"></span>
-
-<h5 id="求链表有几个有效结点"><a href="#求链表有几个有效结点" class="headerlink" title="求链表有几个有效结点"></a>求链表有几个有效结点</h5><p>代码实现</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">//返回链表中有几个有效结点的方法</span><br><span class="line">    public int getLength(HeroNode head) &#123;</span><br><span class="line">        HeroNode temp = head;</span><br><span class="line">        int length = 0;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp.next != null) &#123;</span><br><span class="line">                length++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="求倒数第k个结点"><a href="#求倒数第k个结点" class="headerlink" title="求倒数第k个结点"></a>求倒数第k个结点</h5><p>代码实现</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">//查找单链表中的倒数第k个结点</span><br><span class="line">    public HeroNode getKnode(HeroNode head, int k) &#123;</span><br><span class="line">        //计数器</span><br><span class="line">        int counter = 0;</span><br><span class="line">        //判断单链表是否为空</span><br><span class="line">        <span class="keyword">if</span> (head.next == null) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;链表为空！&quot;</span>);</span><br><span class="line">            <span class="built_in">return</span> null;</span><br><span class="line">        &#125;</span><br><span class="line">        //如果不为空，求总结点的个数size</span><br><span class="line">        int size = getLength(head);</span><br><span class="line"></span><br><span class="line">        HeroNode temp = head;</span><br><span class="line">        //遍历单链表</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (k &lt;= 0 || k &gt; size) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;输入数值不合法！&quot;</span>);</span><br><span class="line">                <span class="built_in">return</span> null;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (counter == size - k) &#123;</span><br><span class="line">                <span class="built_in">return</span> temp.next;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = temp.next;</span><br><span class="line">            counter++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h5><p><img src="https://i.loli.net/2021/10/10/mh3Kd5zBMRHUrc6.png" alt="链表反转1.2步.png"><br><img src="https://i.loli.net/2021/10/10/qvrQCc7AmReVWTZ.png" alt="链表反转3.4步.png"></p>
-<p>代码实现</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">//反转链表</span><br><span class="line">    public void reverseLinkList(HeroNode head) &#123;</span><br><span class="line">        //判断单链表是否没有结点或只有一个结点</span><br><span class="line">        <span class="keyword">if</span> (head.next == null || head.next.next == null) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;单链表没有结点或只有一个结点，无需反转！&quot;</span>);</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        //定义一个辅助变量,帮助我们遍历原来的链表</span><br><span class="line">        HeroNode cur = head.next;</span><br><span class="line">        HeroNode next = null;//指向当前结点（cur）的下一个结点，防止链表断开</span><br><span class="line">        //创建新的头结点</span><br><span class="line">        HeroNode reverseHead = new HeroNode(0, <span class="string">&quot;&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">        //遍历原来的链表，每遍历一个结点，就将其取出，并放在新链表reverseHead的最前端</span><br><span class="line">        <span class="keyword">while</span> (cur != null) &#123;</span><br><span class="line">            next = cur.next;//将next指向cur的下一个结点</span><br><span class="line">            cur.next = reverseHead.next;//将cur插入到reverseHead的前面</span><br><span class="line">            reverseHead.next = cur;//将reseverhead与cur连接</span><br><span class="line">            cur = next;//将cur后移</span><br><span class="line">        &#125;</span><br><span class="line">        //将head指向reseverHead的第一个结点</span><br><span class="line">        head.next = reverseHead.next;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="中缀表达式转后缀表达式"><a href="#中缀表达式转后缀表达式" class="headerlink" title="中缀表达式转后缀表达式"></a>中缀表达式转后缀表达式</h3><h4 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h4><p>1.初始化两个栈：运算符栈s1和储存中间结果的栈s2<br>2.从左至右扫描中缀表达式<br>3.遇到数字时，将其压入s2<br>4.遇到运算符时，比较其与s1栈顶运算符的优先级<br>(1)如果s1为空，或栈顶元素为左括号“)”，则直接将此运算符入s1栈<br>(2)否则，若运算符优先级比栈顶运算符优先级高，也将运算符压入s1栈<br>(3)若运算符优先级比栈顶运算符优先级低，将s1栈顶的运算符弹出，并压入到s2中，再次转到4.1)步，与s1中新的栈顶运算符相比较<br>5.遇到括号时：<br>(1)如果是左括号“(”，则直接压入s1<br>(2)如果是右括号“)”，则依次弹出s1栈顶的运算符，并压入s2，直到遇到左括号为止，此时将这一对括号丢弃<br>6.重复步骤2-5，直到扫描完表达式<br>7.将s1中剩余的运算符依次弹出并压入s2栈<br>8.依次弹出s2中的元素并输出，结果的逆序即为中缀表达式对应的后缀表达式</p>
+<h4 id="表达式举例"><a href="#表达式举例" class="headerlink" title="表达式举例"></a>表达式举例</h4><p>中缀表达式：1 + ( ( 2 + 3 ) * 4 ) - 5<br>转换后的后缀表达式：1 2 3 + 4 * + 5 -</p>
+<h4 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h4><p><img src="https://i.loli.net/2021/11/03/VthvO5jc3oexJdH.png" alt="中缀转后缀.PNG"></p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">package com.stack;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.util.Stack;</span><br><span class="line"></span><br><span class="line">public class ChangePolandNotation &#123;</span><br><span class="line">    //将一个中缀表达式转换为后缀表达式</span><br><span class="line">    //1.  1+((2+3)*4)-5  =&gt;   1 2 3 + 4 * + 5 -</span><br><span class="line">    //2.  直接对str进行操作不方便，先将1+((2+3)*4)-5 转换为中缀表达式对应的List</span><br><span class="line">    //后缀表达式（逆波兰表达式为） (3+4)*5-6    =&gt;      3 4 + 5 * 6 -</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //中缀表达式</span><br><span class="line">        String expression = <span class="string">&quot;1 + ( ( 2 + 3 ) * 4 ) - 5 &quot;</span>;</span><br><span class="line">        ChangePolandNotation changePolandNotation = new ChangePolandNotation();</span><br><span class="line">        changePolandNotation.cal(expression);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void cal(String expression) &#123;</span><br><span class="line">        Stack&lt;String&gt; s1 = new Stack&lt;&gt;();</span><br><span class="line">        Stack&lt;String&gt; s2 = new Stack&lt;&gt;();</span><br><span class="line">        //将expression用空格分割成String数组</span><br><span class="line">        String[] split = expression.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">        //增强<span class="keyword">for</span>循环遍历String数组</span><br><span class="line">        <span class="keyword">for</span> (String ele : split) &#123;</span><br><span class="line">            //如果是数字将其压入s2栈</span><br><span class="line">            <span class="keyword">if</span> (ele.matches(<span class="string">&quot;\\d+&quot;</span>)) &#123;</span><br><span class="line">                s2.push(ele);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ele.equals(<span class="string">&quot;(&quot;</span>) || ele.equals(<span class="string">&quot;)&quot;</span>)) &#123;//如果是左右小括号</span><br><span class="line">                <span class="keyword">if</span> (ele.equals(<span class="string">&quot;(&quot;</span>)) &#123;//如果是左括号</span><br><span class="line">                    s1.push(ele);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;//如果是右括号</span><br><span class="line">                    <span class="keyword">while</span> (!s1.peek().equals(<span class="string">&quot;(&quot;</span>)) &#123;//如果s1栈顶不是左括号</span><br><span class="line">                        String temp = s1.peek();//弹出s1栈顶的运算符，并压入s2</span><br><span class="line">                        s2.push(temp);</span><br><span class="line">                        s1.pop();</span><br><span class="line">                    &#125;</span><br><span class="line">                    //直到遇到左括号，将其丢弃</span><br><span class="line">                    s1.pop();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;//如果遇到运算符</span><br><span class="line">                <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s1.empty() || s1.peek().equals(<span class="string">&quot;(&quot;</span>)) &#123;//如果s1为空或栈顶为左括号</span><br><span class="line">                        s1.push(ele);</span><br><span class="line">                        <span class="built_in">break</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;//若不为空，判断操作符优先级</span><br><span class="line">                        <span class="keyword">if</span> (priority(ele) &gt; priority(s1.peek())) &#123;//如果ele优先级比栈顶操作符优先级高</span><br><span class="line">                            s1.push(ele);</span><br><span class="line">                            <span class="built_in">break</span>;</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;//如果ele优先级比栈顶操作符优先级低，弹出s1栈顶的运算符，并压入s2</span><br><span class="line">                            String temp = s1.peek();</span><br><span class="line">                            s2.push(temp);</span><br><span class="line">                            s1.pop();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //将s1中剩余的运算符依次弹出并压入s2</span><br><span class="line">        <span class="keyword">while</span> (!s1.empty()) &#123;</span><br><span class="line">            String temp = s1.peek();</span><br><span class="line">            s2.push(temp);</span><br><span class="line">            s1.pop();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //依次弹出s2中的元素，其逆序即为后缀表达式</span><br><span class="line">        //做法是将s2栈中的元素压入s1，s1即为逆序的s2</span><br><span class="line">        <span class="keyword">while</span> (!s2.empty()) &#123;</span><br><span class="line">            String temp = s2.peek();</span><br><span class="line">            s1.push(temp);</span><br><span class="line">            s2.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        //遍历s1栈</span><br><span class="line">        <span class="keyword">while</span> (!s1.empty()) &#123;</span><br><span class="line">            System.out.println(s1.peek());</span><br><span class="line">            s1.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static int priority(String oper) &#123;</span><br><span class="line">        <span class="keyword">if</span> (oper.equals(<span class="string">&quot;*&quot;</span>) || oper.equals(<span class="string">&quot;/&quot;</span>)) &#123;</span><br><span class="line">            <span class="built_in">return</span> 1;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (oper.equals(<span class="string">&quot;+&quot;</span>) || oper.equals(<span class="string">&quot;-&quot;</span>)) &#123;</span><br><span class="line">            <span class="built_in">return</span> 0;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">return</span> -1;//只能运算加减乘除，否则返回-1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<h4 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h4><p>以上内容为博主总结，用于日后复习与巩固，如果转载请注明来源，谢谢。</p>
+
 
     </div>
 
@@ -296,13 +280,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8-%E5%88%A0%E9%99%A4/" rel="prev" title="数据结构之单向链表-删除">
-      <i class="fa fa-chevron-left"></i> 数据结构之单向链表-删除
+    <a href="/2021/11/02/%E5%89%8D%E4%B8%AD%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="前中后缀表达式">
+      <i class="fa fa-chevron-left"></i> 前中后缀表达式
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/10/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" rel="next" title="数据结构之双向链表">
-      数据结构之双向链表 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -361,7 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%EF%BC%88%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">单向链表（面试题）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">基本介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B1%82%E9%93%BE%E8%A1%A8%E6%9C%89%E5%87%A0%E4%B8%AA%E6%9C%89%E6%95%88%E7%BB%93%E7%82%B9"><span class="nav-number">1.1.1.</span> <span class="nav-text">求链表有几个有效结点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B1%82%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9"><span class="nav-number">1.1.2.</span> <span class="nav-text">求倒数第k个结点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="nav-number">1.1.3.</span> <span class="nav-text">反转链表</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="nav-number">1.2.</span> <span class="nav-text">声明</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">中缀表达式转后缀表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">处理方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%BE%E4%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">表达式举例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E8%A7%A3"><span class="nav-number">1.3.</span> <span class="nav-text">图解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.4.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
